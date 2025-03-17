@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">org.h2.Driver</property>
+        <property name="hibernate.connection.url">jdbc:h2:./vehiclemaintdb</property>
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.connection.password"></property>
+        
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
+        
+        <!-- Create the database schema on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        
+        <!-- Show SQL in console -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        
+        <!-- Entity mappings -->
+        <mapping class="com.example.model.AuditLog" />
+        <mapping class="com.example.model.Customer" />
+        <mapping class="com.example.model.InventoryUsage" />
+        <mapping class="com.example.model.Invoice" />
+        <mapping class="com.example.model.Mechanic" />
+        <mapping class="com.example.model.MechanicSkills" />
+        <mapping class="com.example.model.Payment" />
+        <mapping class="com.example.model.Role" />
+        <mapping class="com.example.model.ServiceAppointment" />
+        <mapping class="com.example.model.ServiceReport" />
+        <mapping class="com.example.model.ServiceType" />
+        <mapping class="com.example.model.Task" />
+        <mapping class="com.example.model.User" />
+        <mapping class="com.example.model.Vehicle" />
+    </session-factory>
+</hibernate-configuration>
